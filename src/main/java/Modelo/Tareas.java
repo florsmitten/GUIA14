@@ -4,12 +4,14 @@ import java.util.Calendar;
 
 public class Tareas {
 
+    private int codigoTarea;
     private boolean tareaRealizada;
     private Calendar fechaFinTarea;
     private String horaFinTarea;
     private Operarios operario;
 
-    public Tareas(boolean tareaRealizada, Calendar fechaFinTarea, String horaFinTarea, Operarios operario) {
+    public Tareas(int codigoTarea, boolean tareaRealizada, Calendar fechaFinTarea, String horaFinTarea, Operarios operario) {
+        this.codigoTarea = codigoTarea;
         this.tareaRealizada = tareaRealizada;
         this.fechaFinTarea = fechaFinTarea;
         this.horaFinTarea = horaFinTarea;
@@ -18,6 +20,10 @@ public class Tareas {
 
     public Tareas() {
     }
+
+    public int getCodigoTarea() { return codigoTarea; }
+
+    public void setCodigoTarea(int codigoTarea) { this.codigoTarea = codigoTarea; }
 
     public boolean isTareaRealizada() {
         return tareaRealizada;
