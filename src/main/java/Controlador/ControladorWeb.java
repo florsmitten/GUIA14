@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.DAO.InstruccionesDB;
 import Modelo.DAO.MateriasPrimasDB;
 import Modelo.DAO.OrdenTrabajoDB;
+import Modelo.DAO.reporteJson;
 import Modelo.Instrucciones;
 import Modelo.MateriasPrimas;
 import Modelo.OrdenesDeTrabajo;
@@ -35,4 +36,12 @@ public class ControladorWeb {
         InstruccionesDB.updateInstrucciones(descripcion, cantNecesaria, codMatPrima, codIns);
     }
 
+    public static MateriasPrimas consultaMateriaP(int codMatPrima) {
+
+        return MateriasPrimasDB.consultaMateriaP(codMatPrima);
+    }
+
+    public static void generarJson(int idPed, MateriasPrimas matPrim, int cantReq, String depositos) {
+        reporteJson.generarJson(idPed, matPrim, cantReq, depositos);
+    }
 }

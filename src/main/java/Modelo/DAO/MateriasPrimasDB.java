@@ -1,6 +1,7 @@
 package Modelo.DAO;
 
 import Controlador.Conexion;
+import Modelo.MateriasPrimas;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -30,5 +31,12 @@ public class MateriasPrimasDB {
         }
 
         return stock;
+    }
+
+    public static MateriasPrimas consultaMateriaP(int codMatPrima) {
+
+        MateriasPrimas matprim = new MateriasPrimas();
+
+        return matprim;
     }
 }
