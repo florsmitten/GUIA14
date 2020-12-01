@@ -12,12 +12,12 @@ public class OrdenesDeTrabajo {
     private Calendar fechaFinalizacion;
     private String descripcion;
     private boolean esUrgente;
-    private String[] nombresResponsables;
+    private String nombresResponsables;
     private Supervisores supervisor;
     private ArrayList<Tareas> tareas;
 
     public OrdenesDeTrabajo(int codigoOT, Calendar fechaRegistracion, Productos producto, int cantidadRequeridaProductos,
-                            Calendar fechaFinalizacion, String descripcion, boolean esUrgente, String[] nombresResponsables,
+                            Calendar fechaFinalizacion, String descripcion, boolean esUrgente, String nombresResponsables,
                             Supervisores supervisor, ArrayList<Tareas> tareas) {
         this.codigoOT = codigoOT;
         this.fechaRegistracion = fechaRegistracion;
@@ -90,11 +90,11 @@ public class OrdenesDeTrabajo {
         this.esUrgente = esUrgente;
     }
 
-    public String[] getNombresResponsables() {
+    public String getNombresResponsables() {
         return nombresResponsables;
     }
 
-    public void setNombresResponsables(String[] nombresResponsables) {
+    public void setNombresResponsables(String nombresResponsables) {
         this.nombresResponsables = nombresResponsables;
     }
 
