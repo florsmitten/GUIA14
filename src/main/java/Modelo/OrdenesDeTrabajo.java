@@ -18,7 +18,7 @@ public class OrdenesDeTrabajo {
 
     public OrdenesDeTrabajo(int codigoOT, Calendar fechaRegistracion, Productos producto, int cantidadRequeridaProductos,
                             Calendar fechaFinalizacion, String descripcion, boolean esUrgente, String nombresResponsables,
-                            Supervisores supervisor, ArrayList<Tareas> tareas) {
+                            Supervisores supervisor) {
         this.codigoOT = codigoOT;
         this.fechaRegistracion = fechaRegistracion;
         this.producto = producto;
@@ -28,7 +28,6 @@ public class OrdenesDeTrabajo {
         this.esUrgente = esUrgente;
         this.nombresResponsables = nombresResponsables;
         this.supervisor = supervisor;
-        this.tareas = tareas;
     }
 
     public OrdenesDeTrabajo() {
@@ -110,7 +109,18 @@ public class OrdenesDeTrabajo {
         return tareas;
     }
 
-    public void setTareas(ArrayList<Tareas> tareas) {
-        this.tareas = tareas;
+    public void setTareas(int codigoTarea, boolean tareaRealizada, Calendar fechaFinTarea, String horaFinTarea, Operarios operario) {
+
+        tareas.add(new Tareas( codigoTarea,  tareaRealizada,  fechaFinTarea,  horaFinTarea,  operario));
     }
+
+    public void setTareas(int indice, int codigoTarea, boolean tareaRealizada, Calendar fechaFinTarea, String horaFinTarea, Operarios operario) {
+
+        this.tareas.get(indice).setCodigoTarea(codigoTarea);
+        this.tareas.get(indice).isTareaRealizada();
+        this.tareas.get(indice).setFechaFinTarea(fechaFinTarea);
+        this.tareas.get(indice).setHoraFinTarea(horaFinTarea);
+        this.tareas.get(indice).setOperario(operario);
+    }
+
 }
